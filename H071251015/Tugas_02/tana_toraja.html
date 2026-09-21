@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tana Toraja Negeri Para Leluhur</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0; 
+            padding: 0; 
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f1ea;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        h1, h2 {
+            color: #6b2e2e;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 8px; 
+        }
+
+        hr {
+            border: none;
+            border-top: 2px solid #d8cfc0;
+            margin: 30px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #d8cfc0;
+            padding: 10px;
+            text-align: left;
+        }
+
+        #beranda {
+            border-left: 6px solid #6b2e2e;
+        }
+
+        #kontak {
+            background-color: #fff8f0;
+        }
+
+        #lokasi dt {
+            font-weight: bold;
+            color: #6b2e2e;
+            margin-top: 10px;
+        }
+
+        
+        .site-header {
+            background-color: #6b2e2e;
+            color: #ffffff;
+            padding: 30px 20px;
+            margin: 0;
+            text-align: center;
+            border-bottom: 4px solid #4a1f1f;
+        }
+
+        .site-header p {
+            text-align: center;
+        }
+
+    
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            background-color: #8a3f3f;
+            padding: 15px;
+            margin: 0;
+        }
+
+        .nav-link {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 8px 18px;
+            border: 2px solid transparent;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+
+        .nav-link:hover {
+            background-color: #ffffff;
+            color: #6b2e2e;
+            border: 2px solid #6b2e2e;
+        }
+
+        .content-section {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 25px;
+            background-color: #ffffff;
+            border: 1px solid #e0dacd;
+            border-radius: 10px;
+        }
+
+        .section-title {
+            border-bottom: 3px solid #d8cfc0;
+            padding-bottom: 8px;
+            margin-bottom: 15px;
+        }
+
+        
+        .gallery {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .gallery-item {
+            width: 220px;
+            margin: 0;
+            padding: 10px;
+            border: 1px solid #d8cfc0;
+            border-radius: 8px;
+            background-color: #fafafa;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-item figcaption {
+            margin-top: 8px;
+            font-weight: bold;
+            color: #6b2e2e;
+        }
+
+        
+        .aktivitas-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding-left: 0;
+            margin: 20px 0 0 0;
+        }
+
+        .aktivitas-list li {
+            padding: 12px 15px;
+            border: 1px solid #e0dacd;
+            border-left: 5px solid #6b2e2e;
+            border-radius: 6px;
+            background-color: #f9f5f0;
+            transition: background-color 0.3s;
+        }
+
+        .aktivitas-list li:hover {
+            background-color: #f0e6d8;
+        }
+
+        
+        .table-destinasi img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border: 2px solid #d8cfc0;
+        }
+
+        .table-destinasi thead {
+            background-color: #6b2e2e;
+            color: #ffffff;
+        }
+
+        .table-destinasi tfoot td {
+            background-color: #f9f5f0;
+            font-style: italic;
+        }
+
+        
+        .summary-table tbody tr:hover {
+            background-color: #f0e6d8;
+        }
+
+        
+        .tour-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-width: 500px;
+            margin: 20px auto 0 auto;
+            padding: 20px;
+            border: 1px solid #e0dacd;
+            border-radius: 10px;
+            background-color: #fff8f0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 10px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border: 1px solid #6b2e2e;
+        }
+
+        .btn-submit {
+            padding: 12px;
+            background-color: #6b2e2e;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #8a3f3f;
+        }
+
+        
+        .video-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .video-wrapper video {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #6b2e2e;
+            border-radius: 8px;
+        }
+
+        
+        .site-footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6b2e2e;
+            color: #ffffff;
+            margin-top: 30px;
+        }
+
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-link {
+                text-align: center;
+            }
+
+            .gallery-item {
+                width: 100%;
+            }
+
+            .content-section {
+                margin: 15px;
+                padding: 15px;
+            }
+
+            .table-destinasi,
+            .summary-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header h1 {
+                font-size: 22px;
+            }
+
+            .tour-form {
+                margin: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="site-header">
+        <h1>Tana Toraja Negeri Para Leluhur</h1>
+        <p>Selamat datang di Tana Toraja, tempat keindahan alam dan tradisi unik tetap hidup.</p>
+    </header>
+
+    <nav class="navbar">
+        <a class="nav-link" href="index.html">Beranda</a>
+        <a class="nav-link" href="tana_toraja.html">Tana Toraja</a>
+        <a class="nav-link" href="budaya.html">Budaya</a>
+        <a class="nav-link" href="wisata.html">Wisata</a>
+        <a class="nav-link" href="kontak.html">Kontak</a>
+    </nav>
+
+    <main>
+
+        <section id="beranda" class="content-section">
+            <h1 class="section-title">Sejarah Tana Toraja</h1>
+            <p>Tana Toraja adalah salah satu kabupaten di Provinsi Sulawesi Selatan yang dihuni oleh masyarakat Toraja.
+            Namanya secara harfiah berarti "negeri raja-raja langit", julukan yang disematkan masyarakat setempat sejak berabad-abad silam.
+            Kawasan ini terkenal dengan arsitektur rumah adat Tongkonan yang beratap melengkung menyerupai perahu, serta upacara pemakaman Rambu Solo'
+            yang berlangsung meriah dan menjadi daya tarik wisata budaya kelas dunia.</p>
+            <img src="media/pictures/Adat Toraja.jpeg" width="500" height="300" alt="Gambar Tana Toraja">
+            <p>
+                Selain itu, Tana Toraja juga terkenal dengan keindahan alamnya yang menakjubkan, termasuk pegunungan,
+                lembah, dan sawah terasering yang hijau. Wisatawan yang berkunjung ke Tana Toraja
+                dapat menikmati pemandangan alam yang memukau serta merasakan pengalaman budaya yang autentik melalui partisipasi dalam upacara
+            </p>
+        </section>
+
+        <section id="budaya" class="content-section">
+            <h1 class="section-title">Budaya Tana Toraja</h1>
+            <p>Budaya Tana Toraja sangat kaya dan unik. Salah satu aspek budaya yang paling terkenal adalah upacara pemakaman yang megah,
+                di mana jenazah ditempatkan di dalam rumah adat yang disebut Tongkonan. Upacara ini melibatkan tarian, musik,
+                dan persembahan hewan sebagai bentuk penghormatan kepada leluhur.</p>
+            <img src="media/pictures/tongkonan.jpeg" width="500" height="300" alt="Gambar Budaya Tana Toraja">
+            <p>
+                Selain itu, masyarakat Toraja juga memiliki sistem kepercayaan animisme yang kuat, di mana mereka percaya bahwa roh leluhur tetap hadir dalam kehidupan sehari-hari.
+                Tradisi ini tercermin dalam berbagai aspek kehidupan masyarakat Toraja, termasuk arsitektur rumah adat, seni ukir, dan pakaian tradisional.
+            </p>
+        </section>
+
+        <section id="wisata" class="content-section">
+            <h2 class="section-title">Wisata Tana Toraja</h2>
+            <p>Tana Toraja menawarkan berbagai destinasi wisata yang menarik bagi para pengunjung. Salah satu tempat wisata yang populer adalah Londa,
+                sebuah kompleks pemakaman yang terkenal dengan gua-gua batu dan patung-patung yang menggambarkan kehidupan setelah mati. Selain itu,
+                wisatawan juga dapat mengunjungi Kete Kesu, sebuah desa adat yang terkenal dengan rumah adat Tongkonan dan ukiran kayu yang indah.</p>
+            <img src="media/pictures/londa.jpeg" width="500" height="300" alt="Gambar Wisata Tana Toraja">
+            <p>
+                Selain itu, Tana Toraja juga menawarkan pemandangan alam yang menakjubkan, termasuk pegunungan, lembah, dan sawah terasering yang hijau.
+                Wisatawan dapat menikmati trekking, bersepeda, atau sekadar bersantai sambil menikmati keindahan alam sekitar.
+            </p>
+
+            <table border="1" cellpadding="10" cellspacing="0" class="table-destinasi">
+                <thead>
+                    <tr>
+                        <th>Destinasi Wisata</th>
+                        <th>Nama</th>
+                        <th>Deskripsi</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="media/pictures/londa.jpeg" width="100" height="100" alt="Londa"></td>
+                        <td>Londa</td>
+                        <td>Kompleks pemakaman dengan gua-gua batu dan patung-patung yang menggambarkan kehidupan setelah mati.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="media/pictures/kete-kesu.jpeg" width="100" height="100" alt="Kete Kesu"></td>
+                        <td>Kete Kesu</td>
+                        <td>Desa adat yang terkenal dengan rumah adat Tongkonan dan ukiran kayu yang indah.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="media/pictures/lolai_neegri_diatas_awan.jpeg" width="100" height="100" alt="lolai negeri di atas awan"></td>
+                        <td>lolai negeri di atas awan</td>
+                        <td>Lolai, sang Negeri di Atas Awan, menawarkan pemandangan yang magis dengan hamparan langit berbintang yang terasa begitu dekat.</td>
+                    </tr>
+                    <tr>
+                        <td><img src="media/pictures/Buntu_Burake.jpeg" width="100" height="100" alt="Buntu Burake"></td>
+                        <td>Buntu Burake</td>
+                        <td>Destinasi mahakarya tempat jemari raksasa Kristus memberkati malam Toraja, berlatarkan gemerlap lautan cahaya kota dan keagungan antariksa.</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Tana Toraja menawarkan pengalaman wisata yang tak terlupakan bagi para pengunjung, dengan kombinasi keindahan alam,
+                            budaya yang kaya, dan tradisi unik yang masih dijaga hingga saat ini.</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="galeri-foto" class="content-section">
+            <h2 class="section-title">Galeri Foto Tana Toraja</h2>
+            <p>Berikut adalah beberapa foto yang menampilkan keindahan alam, budaya, dan tradisi unik Tana Toraja:</p>
+
+            <div class="gallery">
+                <figure class="gallery-item">
+                    <img src="media/pictures/londa.jpeg" width="200" height="150" alt="Londa">
+                    <figcaption>Destinasi Londa</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="media/pictures/kete-kesu.jpeg" width="200" height="150" alt="Kete Kesu">
+                    <figcaption>Desa Adat Kete Kesu</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="media/pictures/lolai_neegri_diatas_awan.jpeg" width="200" height="150" alt="Lolai Negeri di Atas Awan">
+                    <figcaption>Lolai Negeri di Atas Awan</figcaption>
+                </figure>
+
+                <figure class="gallery-item">
+                    <img src="media/pictures/Buntu_Burake.jpeg" width="200" height="150" alt="Buntu Burake">
+                    <figcaption>Buntu Burake</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section id="aktivitas" class="content-section">
+            <h2 class="section-title">Daftar Aktivitas</h2>
+            <ul class="aktivitas-list">
+                <li>Mengeksplorasi dalam gua pemakaman Londa memakai pemandu lokal dan lampu lentera.</li>
+                <li>Mengamati arsitektur kuno Tongkonan dan belanja ukiran khas di Kete Kesu'.</li>
+                <li>Berkemah di Lolai demi berburu pemandangan matahari terbit dan samudera awan.</li>
+                <li>Berjalan di atas jembatan kaca tebing Buntu Burake sembari menikmati pemandangan Makale.</li>
+                <li>Berpartisipasi dalam upacara adat Toraja untuk memahami tradisi leluhur.</li>
+                <li>Menikmati kuliner khas Toraja, seperti Pa'piong dan Daging Bakar Khas Toraja.</li>
+                <li>Berinteraksi dengan masyarakat lokal untuk belajar tentang kehidupan sehari-hari dan budaya mereka.</li>
+                <li>Fotografi lanskap dan budaya untuk mengabadikan keindahan Tana Toraja.</li>
+            </ul>
+        </section>
+
+        <section id="lokasi" class="content-section">
+            <h2 class="section-title">Informasi Lokasi</h2>
+            <dl>
+                <dt>Londa</dt>
+                <dd>Londa Ancient Graveyard bberlokasi di Lembang Sangbua, Kecamatan Kesu, Kabupaten Toraja Utara, Sulawesi Selatan 91852.
+                Berjarak sekitar 7 km di sebelah selatan Rantepao (ibu kota Kabupaten Toraja Utara).
+                Berada tepat di perbatasan antara Kabupaten Tana Toraja dan Kabupaten Toraja Utara, sekitar 2 km masuk dari jalan poros Makale–Rantepao.</dd>
+                <br>
+                <dt>Kete Kesu'</dt>
+                <dd>Kete Kesu berlokasi di Desa Paepalean, Kecamatan Sanggalangi, Kabupaten Toraja Utara, Sulawesi Selatan.
+                Terletak sekitar 5 km ke arah tenggara dari pusat kota Rantepao.
+                Akses jalan sudah beraspal mulus dan sangat mudah dijangkau dengan kendaraan roda dua maupun roda empat.</dd>
+                <br>
+                <dt>Lolai Negeri di Atas Awan</dt>
+                <dd>Lolai - To' Tombi, Negeri di atas awan berlokasi di Desa Lolai, Kecamatan Kapala Pitu, Kabupaten Toraja Utara, Sulawesi Selatan 91854.
+                Berada di dataran tinggi pegunungan dengan ketinggian sekitar 1.300 mdpl.
+                Berjarak sekitar 20 km dari pusat kota Rantepao dengan waktu tempuh berkisar 45–60 menit perjalanan menanjak.</dd>
+                <br>
+                <dt>Buntu Burake</dt>
+                <dd>Buntu Burake berlokasi di Kelurahan Buntu Burake, Kecamatan Makale, Kabupaten Tana Toraja, Sulawesi Selatan.
+                Terletak tepat di atas bukit batu karst yang mengitari ibu kota Kabupaten Tana Toraja.
+                Berjarak sekitar 4 km dari pusat kota Makale atau sekitar 23 km dari Rantepao.</dd>
+            </dl>
+        </section>
+
+        <section id="tabel-informasi" class="content-section">
+            <h2 class="section-title">Ringkasan Informasi Destinasi</h2>
+            <table border="1" class="summary-table">
+                <thead>
+                    <tr>
+                        <th>Nama Destinasi</th>
+                        <th>Daya Tarik Utama</th>
+                        <th>Kategori</th>
+                        <th>Estimasi Tiket Masuk</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Londa</td>
+                        <td>Gua Batu & Tau-Tau</td>
+                        <td>Budaya / Sejarah</td>
+                        <td>Rp 15.000</td>
+                    </tr>
+                    <tr>
+                        <td>Kete Kesu'</td>
+                        <td>Tongkonan Kuno & Situs Ukiran</td>
+                        <td>Desa Adat</td>
+                        <td>Rp 15.000</td>
+                    </tr>
+                    <tr>
+                        <td>Lolai Negeri di Atas Awan</td>
+                        <td>Samudera Awan & Sunrise</td>
+                        <td>Wisata Alam</td>
+                        <td>Rp 15.000</td>
+                    </tr>
+                    <tr>
+                        <td>Buntu Burake</td>
+                        <td>Patung Iconik & Jembatan Kaca</td>
+                        <td>Wisata Religi / Ikonik</td>
+                        <td>Rp 10.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="kontak" class="content-section">
+            <h2 class="section-title">Formulir Pendaftaran Tour</h2>
+            <form class="tour-form">
+                <div class="form-group">
+                    <label for="nama">Nama Lengkap:</label>
+                    <input type="text" id="nama" name="nama" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="telepon">Nomor Telepon:</label>
+                    <input type="tel" id="telepon" name="telepon" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="jumlah_pengunjung">Jumlah Pengunjung:</label>
+                    <input type="number" id="jumlah_pengunjung" name="jumlah_pengunjung" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="tanggal_kunjungan">Tanggal Kunjungan:</label>
+                    <input type="date" id="tanggal_kunjungan" name="tanggal_kunjungan" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="destinasi_pilihan">Pilih Destinasi:</label>
+                    <select id="destinasi_pilihan" name="destinasi_pilihan">
+                        <option value="londa">Londa</option>
+                        <option value="kete_kesu">Kete Kesu'</option>
+                        <option value="lolai Negeri di Atas Awan">Lolai Negeri di Atas Awan</option>
+                        <option value="buntu burake">Buntu Burake</option>
+                        <option value="semua">Semua Destinasi</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="pesan">Pesan / Masukan:</label>
+                    <textarea id="pesan" name="pesan" rows="4" cols="40"></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Kirim Formulir</button>
+            </form>
+        </section>
+
+        <section id="multimedia" class="content-section">
+            <h2 class="section-title">Video Keindahan Toraja</h2>
+            <div class="video-wrapper">
+                <video width="540" height="360" controls>
+                    <source src="media/Video/TanaToraja.mp4" type="video/mp4">
+                    Browser Anda tidak mendukung pemutar video.
+                </video>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <p>&copy; 2026 Eksplorasi Toraja.</p>
+    </footer>
+
+</body>
+</html>
