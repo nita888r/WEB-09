@@ -1,0 +1,45 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aplikasi Manajer Tugas Tim</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6 text-gray-800">
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow">
+    <h1 class="text-2xl font-bold mb-4">Manajer Tugas Tim</h1>
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- List Anggota -->
+      <section class="bg-gray-50 p-4 rounded border">
+        <h2 class="font-bold mb-2">Daftar Anggota</h2>
+        <p id="loadingAnggota" class="text-sm text-blue-600">Memuat anggota...</p>
+        <p id="errorAnggota" class="text-sm text-red-600 hidden"></p>
+        <div id="daftarAnggota" class="space-y-2"></div>
+      </section>
+
+      <!-- Detail & Tugas -->
+      <section class="md:col-span-2 bg-gray-50 p-4 rounded border">
+        <h2 id="judulTugas" class="text-lg font-bold">Pilih Anggota Tim</h2>
+        <p id="progresTugas" class="text-sm text-gray-600 mb-4"></p>
+
+        <!-- Form Tambah -->
+        <form id="formTugas" class="mb-4 hidden">
+          <div class="flex gap-2">
+            <input type="text" id="inputJudul" placeholder="Judul tugas baru (min 5 char)..." class="flex-1 p-2 border rounded text-sm">
+            <button type="submit" id="btnSimpan" class="bg-blue-600 text-white px-4 py-2 rounded text-sm">Simpan</button>
+          </div>
+          <p id="pesanForm" class="text-xs mt-1 hidden"></p>
+        </form>
+
+        <!-- Search -->
+        <input type="text" id="inputCari" placeholder="Cari tugas..." class="w-full p-2 mb-4 border rounded text-sm hidden">
+
+        <p id="statusTugas" class="text-sm text-blue-600 hidden"></p>
+        <p id="pesanKosong" class="text-sm text-gray-500 hidden">Tidak ada tugas yang cocok.</p>
+        <ul id="daftarTugas" class="space-y-2"></ul>
+      </section>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
